@@ -17,11 +17,19 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: radial-gradient(50% 50% at 50% 50%, rgba(117, 24, 222, 0.10) 0%, rgba(19, 19, 19, 0.00) 100%), #131313;
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  width: 100%;
+}
+.embla__slide {
+  display: flex;
+  width: 100%;
+  flex: 0 0 100%;
+}
+
