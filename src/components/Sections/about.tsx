@@ -8,7 +8,7 @@ import Image from 'next/image'
 export default function About() {
   return (
     <section className="flex w-full items-center gap-12">
-      <div className="animate-fade-right animate-once animate-duration-700 flex flex-1 flex-col gap-4">
+      <div className="flex flex-1 animate-fade-right flex-col gap-4 animate-duration-700 animate-once">
         <h2 className="text-4xl font-bold tracking-wider text-brand-500">
           Vinicios Engelage
         </h2>
@@ -38,7 +38,7 @@ export default function About() {
         </button>
       </div>
 
-      <figure className="animate-fade-left animate-once animate-duration-700 relative h-[400px] w-[400px]">
+      <figure className="relative h-[400px] w-[400px] animate-fade-left animate-duration-700 animate-once">
         <Image src="/profile.png" alt="profile-image" fill />
       </figure>
     </section>

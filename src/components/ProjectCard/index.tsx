@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function ProjectCard() {
   return (
-    <div className="bg-opaque flex flex-col items-center gap-4 rounded-md p-4">
+    <div className="flex flex-col items-center gap-4 rounded-md bg-opaque p-4">
       <figure className="relative h-[40px] w-[120px]">
         <Image src="/path-logo.svg" alt="path-logo" fill />
       </figure>

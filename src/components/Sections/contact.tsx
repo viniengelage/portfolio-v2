@@ -13,18 +13,18 @@ export default function Contact() {
           <input
             type="text"
             placeholder="E-mail"
-            className="bg-opaque rounded-md border-none p-4 outline-none placeholder:text-gray-400"
+            className="rounded-md border-none bg-opaque p-4 outline-none placeholder:text-gray-400"
           />
 
           <input
             type="text"
             placeholder="Nome"
-            className="bg-opaque rounded-md border-none p-4 outline-none placeholder:text-gray-400"
+            className="rounded-md border-none bg-opaque p-4 outline-none placeholder:text-gray-400"
           />
 
           <textarea
             placeholder="Mensagem"
-            className="bg-opaque resize-none appearance-none rounded-md border-none p-4 outline-none placeholder:text-gray-400"
+            className="resize-none appearance-none rounded-md border-none bg-opaque p-4 outline-none placeholder:text-gray-400"
           />
 
           <button
@@ -41,7 +41,7 @@ export default function Contact() {
           </h4>
 
           <div className="flex items-center">
-            <figure className="bg-opaque rounded-md p-2 text-gray-300">
+            <figure className="rounded-md bg-opaque p-2 text-gray-300">
               <LinkedinLogo size={30} />
             </figure>
             <Link
@@ -54,7 +54,7 @@ export default function Contact() {
           </div>
 
           <div className="flex items-center">
-            <figure className="bg-opaque rounded-md p-2 text-gray-300">
+            <figure className="rounded-md bg-opaque p-2 text-gray-300">
               <GithubLogo size={30} />
             </figure>
             <Link
@@ -67,7 +67,7 @@ export default function Contact() {
           </div>
 
           <div className="flex items-center gap-2">
-            <figure className="bg-opaque rounded-md p-2 text-gray-300">
+            <figure className="rounded-md bg-opaque p-2 text-gray-300">
               <At size={30} />
             </figure>
             <Link

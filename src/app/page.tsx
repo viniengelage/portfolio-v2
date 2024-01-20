@@ -1,8 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { Swiper as SwiperType } from 'swiper'
-
+import { useState } from 'react'
 import About from '@/components/Sections/about'
 import Skills from '@/components/Sections/skills'
 import Contact from '@/components/Sections/contact'

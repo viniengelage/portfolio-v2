@@ -13,7 +13,7 @@ interface Props {
 
 export default function IconCard({ title, icon: Icon, color }: Props) {
   return (
-    <button className="bg-opaque flex items-center gap-2 rounded-md p-4 ">
+    <button className="flex items-center gap-2 rounded-md bg-opaque p-4 ">
       <Icon size={24} color={color} />
       <p className="text-slate-300">{title}</p>
     </button>
