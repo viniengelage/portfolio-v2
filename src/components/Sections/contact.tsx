@@ -1,5 +1,4 @@
 import { At, GithubLogo, LinkedinLogo } from '@phosphor-icons/react/dist/ssr'
-import Link from 'next/link'
 import SocialCard from '../SocialCard'
 
 export default function Contact() {
@@ -55,7 +54,7 @@ export default function Contact() {
 
           <SocialCard
             title="viniciosvalensuela@gmail.com"
-            icon={GithubLogo}
+            icon={At}
             url="mailto:viniciosvalensuela@gmail.com"
           />
         </div>

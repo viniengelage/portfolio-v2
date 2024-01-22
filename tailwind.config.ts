@@ -37,7 +37,7 @@ const config: Config = {
   },
   plugins: [
     require('tailwindcss-animated'),
-    function ({ addUtilities }) {
+    function ({ addUtilities }: any) {
       const newUtilities = {
         '.mask-gradient': {
           '-webkit-mask':
