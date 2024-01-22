@@ -1,10 +1,9 @@
 import classNames from 'classnames'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { ComponentType, SVGProps, useEffect, useState } from 'react'
 
 interface Props {
   title: string
-  icon: string
+  icon: ComponentType<SVGProps<SVGSVGElement>>
   value: number
   delay?: number
   className?: string
@@ -12,7 +11,7 @@ interface Props {
 
 export default function SkillCard({
   title,
-  icon,
+  icon: Icon,
   value,
   delay,
   className,
@@ -26,8 +25,8 @@ export default function SkillCard({
   return (
     <div className={classNames('flex w-full items-center gap-4', className)}>
       <div className="rounded-md bg-opaque p-3">
-        <figure className="relative h-8 w-8">
-          <Image src={icon} alt="skill-icon" fill objectFit="contain" />
+        <figure>
+          <Icon width={32} height={32} className="text-brand-500" />
         </figure>
       </div>
       <div className="bg-gradient flex w-full flex-col items-start gap-2">
