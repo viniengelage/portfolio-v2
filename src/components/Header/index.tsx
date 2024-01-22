@@ -16,6 +16,9 @@ export default function Header() {
           <Link href="#">Projetos</Link>
         </li>
         <li className="hover:underline">
+          <Link href="#">Skills</Link>
+        </li>
+        <li className="hover:underline">
           <Link href="#">Contato</Link>
         </li>
       </nav>

@@ -1,39 +1,63 @@
 'use client'
 
-import { useState } from 'react'
-import About from '@/components/Sections/about'
-import Skills from '@/components/Sections/skills'
-import Contact from '@/components/Sections/contact'
+import { useRef } from 'react'
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
+import { CaretLeft, CaretRight } from '@phosphor-icons/react/dist/ssr'
 
-import { Carousel } from '@/components/Carousel'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import About from '@/components/Sections/about'
+import Projects from '@/components/Sections/projects'
+import Contact from '@/components/Sections/contact'
+import Skills from '@/components/Sections/skills'
 
 export default function Home() {
-  // const swiperRef = useRef<SwiperType>()
-
-  const [selectedIndex, setSelectedState] = useState(0)
+  const swiperRef = useRef<SwiperRef>(null)
 
   return (
-    <div className="2flex h-full w-full flex-col items-center justify-between py-24">
-      <Swiper onSlideChange={(swiper) => setSelectedState(swiper.activeIndex)}>
+    <div className="relative flex h-full w-full flex-col items-center justify-center pb-20">
+      <Swiper
+        ref={swiperRef}
+        className="flex w-full"
+        loop
+        onAfterInit={(swiper) => swiper.disable()}
+      >
         <SwiperSlide>
-          <About />
+          {({ isActive }) => (isActive ? <About /> : null)}
         </SwiperSlide>
 
         <SwiperSlide>
-          <Skills />
+          {({ isActive }) => (isActive ? <Projects /> : null)}
         </SwiperSlide>
 
         <SwiperSlide>
-          <Contact />
+          {({ isActive }) => (isActive ? <Skills /> : null)}
         </SwiperSlide>
 
-        <Carousel.Navigation>
-          <Carousel.Prev />
-          <Carousel.Dots selectedIndex={selectedIndex} />
-          <Carousel.Next />
-        </Carousel.Navigation>
+        <SwiperSlide>
+          {({ isActive }) => (isActive ? <Contact /> : null)}
+        </SwiperSlide>
       </Swiper>
+
+      <button
+        className="fixed bottom-20 right-20 text-gray-300 hover:text-gray-500"
+        onClick={() => {
+          swiperRef.current?.swiper.enable()
+          swiperRef.current?.swiper.slideNext()
+          swiperRef.current?.swiper.disable()
+        }}
+      >
+        <CaretRight size={32} />
+      </button>
+
+      <button
+        className="fixed bottom-20 left-20 text-gray-300 hover:text-gray-500"
+        onClick={() => {
+          swiperRef.current?.swiper.enable()
+          swiperRef.current?.swiper.slidePrev()
+          swiperRef.current?.swiper.disable()
+        }}
+      >
+        <CaretLeft size={32} />
+      </button>
     </div>
   )
 }

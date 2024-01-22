@@ -1,21 +1,16 @@
-import { ComponentType } from 'react'
-
-interface IconProps extends React.SVGProps<SVGElement> {
-  size?: number | string
-  color?: string
-}
+import Image from 'next/image'
 
 interface Props {
-  title: string
-  icon: ComponentType<IconProps>
+  url: string
   color?: string
 }
 
-export default function IconCard({ title, icon: Icon, color }: Props) {
+export default function IconCard({ url }: Props) {
   return (
-    <button className="flex items-center gap-2 rounded-md bg-opaque p-4 ">
-      <Icon size={24} color={color} />
-      <p className="text-slate-300">{title}</p>
+    <button className="flex flex-col items-center gap-4 rounded-md bg-opaque p-3">
+      <figure className="relative h-7 w-7">
+        <Image src={url} alt="icon-card-image" fill />
+      </figure>
     </button>
   )
 }

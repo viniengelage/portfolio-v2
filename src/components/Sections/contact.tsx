@@ -1,5 +1,6 @@
 import { At, GithubLogo, LinkedinLogo } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
+import SocialCard from '../SocialCard'
 
 export default function Contact() {
   return (
@@ -8,7 +9,7 @@ export default function Contact() {
         Contato
       </h2>
 
-      <div className="mt-4 flex w-full items-start justify-center gap-12">
+      <div className="mt-6 flex w-full items-start justify-center gap-12">
         <form className="flex w-full max-w-[400px] flex-col gap-4">
           <input
             type="text"
@@ -40,44 +41,23 @@ export default function Contact() {
             Preencha o formulário ou entre em contato <br /> pelos links abaixo
           </h4>
 
-          <div className="flex items-center">
-            <figure className="rounded-md bg-opaque p-2 text-gray-300">
-              <LinkedinLogo size={30} />
-            </figure>
-            <Link
-              href="https://www.linkedin.com/in/viniengelage/"
-              target="_blank"
-              className="font-light text-gray-300"
-            >
-              linkedin.com/viniengelage
-            </Link>
-          </div>
+          <SocialCard
+            title="linkedin.com/viniengelage"
+            icon={LinkedinLogo}
+            url="https://www.linkedin.com/in/viniengelage"
+          />
 
-          <div className="flex items-center">
-            <figure className="rounded-md bg-opaque p-2 text-gray-300">
-              <GithubLogo size={30} />
-            </figure>
-            <Link
-              href="https://www.github.com/viniengelage"
-              target="_blank"
-              className="font-light text-gray-300"
-            >
-              github.com/viniengelage
-            </Link>
-          </div>
+          <SocialCard
+            title="github.com/viniengelage"
+            icon={GithubLogo}
+            url="https://www.github.com/viniengelage"
+          />
 
-          <div className="flex items-center gap-2">
-            <figure className="rounded-md bg-opaque p-2 text-gray-300">
-              <At size={30} />
-            </figure>
-            <Link
-              href="mailto:viniciosvalensuela@gmail.com"
-              target="_blank"
-              className="font-light text-gray-300"
-            >
-              contato@viniengelage.com
-            </Link>
-          </div>
+          <SocialCard
+            title="viniciosvalensuela@gmail.com"
+            icon={GithubLogo}
+            url="mailto:viniciosvalensuela@gmail.com"
+          />
         </div>
       </div>
     </section>
