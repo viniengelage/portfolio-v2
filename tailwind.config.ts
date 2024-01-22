@@ -24,14 +24,30 @@ const config: Config = {
           '950': '#320f66',
         },
       },
-
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
+      keyframes: {
+        scroll: {
+          to: { transform: 'translate(calc(-50% - 0.5rem))' },
+        },
+      },
+      animation: {
+        scrollFoward: 'scroll forwards',
+        scrollReverse: 'scroll reverse',
+      },
     },
   },
-  plugins: [require('tailwindcss-animated')],
+  plugins: [
+    require('tailwindcss-animated'),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.mask-gradient': {
+          '-webkit-mask':
+            'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
+          mask: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
+        },
+      }
+
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    },
+  ],
 }
 export default config

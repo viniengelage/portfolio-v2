@@ -1,24 +1,25 @@
-// import {
-//   Css3Original,
-//   FigmaOriginal,
-//   Html5Original,
-//   JavascriptOriginal,
-//   MongodbOriginal,
-//   NestjsPlain,
-//   NextjsLine,
-//   NodejsOriginal,
-//   PostgresqlOriginal,
-//   ReactOriginal,
-//   TypescriptOriginal,
-// } from 'devicons-react'
-
-import { ReactOriginal } from 'devicons-react'
-
-// import IconCard from '../IconCard'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import SkillCard from '../SkillCard'
 import IconCard from '../IconCard'
-import { Autoplay } from 'swiper/modules'
+import InfiteHorizontalScroller from '../InfiteHorizontalScroller'
+
+const skillsImages = [
+  '/icons/html5.svg',
+  '/icons/css3.svg',
+  '/icons/javascript.svg',
+  '/icons/typescript.svg',
+  '/icons/react.svg',
+  '/icons/nextjs.svg',
+  '/icons/nodejs.svg',
+  '/icons/expo.svg',
+  '/icons/jestjs.svg',
+  '/icons/nestjs.svg',
+  '/icons/postgres.svg',
+  '/icons/mongodb.svg',
+  '/icons/expressjs.svg',
+  '/icons/figma.svg',
+  '/icons/git.svg',
+  '/icons/adonisjs.svg',
+]
 
 export default function Skills() {
   return (
@@ -120,10 +121,18 @@ export default function Skills() {
         </div>
       </div>
 
-      <div className="mt-10 flex items-center gap-4">
-        <div>
-          <IconCard url="/icons/react.svg" />
-        </div>
+      <div className="mt-12 flex flex-col items-center gap-4">
+        <InfiteHorizontalScroller duration={400}>
+          {skillsImages.map((item, index) => (
+            <IconCard key={index} url={item} />
+          ))}
+        </InfiteHorizontalScroller>
+
+        <InfiteHorizontalScroller direction="left" duration={400}>
+          {skillsImages.map((item, index) => (
+            <IconCard key={index} url={item} />
+          ))}
+        </InfiteHorizontalScroller>
       </div>
     </section>
   )
