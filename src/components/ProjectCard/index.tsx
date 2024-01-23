@@ -1,12 +1,21 @@
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import classNames from 'classnames'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface Props {
+  description: string
+  logo: string
+  url: string
   className?: string
 }
 
-export default function ProjectCard({ className }: Props) {
+export default function ProjectCard({
+  description,
+  logo,
+  url,
+  className,
+}: Props) {
   return (
     <div
       className={classNames(
@@ -15,19 +24,21 @@ export default function ProjectCard({ className }: Props) {
       )}
     >
       <figure className="relative h-[40px] w-[120px]">
-        <Image src="/path-logo.svg" alt="path-logo" fill />
+        <Image src={logo} alt="path-logo" fill />
       </figure>
 
-      <p className="text-sm font-light text-gray-300">
-        Lorem ipsum dolor sit amet consectetur. Diam et justo ridiculus mauris
-        massa turpis ultrices viverra. Dignissim sed enim consectetur massa
-        nullam.
-      </p>
+      <p className="text-sm font-light text-gray-300">{description}</p>
 
-      <button className="mt-4 flex w-full items-center justify-between text-brand-500 hover:text-brand-800">
-        Saiba mais
-        <ArrowRight />
-      </button>
+      <div className="mt-2 flex w-full flex-1 items-end">
+        <Link
+          href={url}
+          target="_blank"
+          className="flex w-full items-center justify-between text-brand-500 hover:text-brand-800"
+        >
+          Saiba mais
+          <ArrowRight />
+        </Link>
+      </div>
     </div>
   )
 }

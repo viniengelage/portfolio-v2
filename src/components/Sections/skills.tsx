@@ -1,3 +1,5 @@
+import { ComponentType, SVGProps, useMemo } from 'react'
+
 import SkillCard from '../SkillCard'
 import IconCard from '../IconCard'
 import InfiteHorizontalScroller from '../InfiteHorizontalScroller'
@@ -18,8 +20,18 @@ import ExpressJsIcon from '@/assets/icons/expressjs'
 import FigmaIcon from '@/assets/icons/figma'
 import GitIcon from '@/assets/icons/git'
 import AdonisJsIcon from '@/assets/icons/adonisjs'
+import classNames from 'classnames'
 
-const skills = [
+interface SkillProps {
+  name: string
+  icon: ComponentType<SVGProps<SVGSVGElement>>
+  yearsOfXp: number
+  percentageOfXp: number
+  initialDelay: number
+  animationDelay: number
+}
+
+const skillIcons = [
   Html5Icon,
   Css3Icon,
   JavascriptIcon,
@@ -40,6 +52,120 @@ const skills = [
 ]
 
 export default function Skills() {
+  const basicSkills = useMemo<SkillProps[]>(
+    () => [
+      {
+        name: 'Html5',
+        icon: Html5Icon,
+        yearsOfXp: 5,
+        percentageOfXp: 90,
+        animationDelay: 300,
+        initialDelay: 500,
+      },
+      {
+        name: 'Css3',
+        icon: Css3Icon,
+        yearsOfXp: 5,
+        percentageOfXp: 90,
+        animationDelay: 500,
+        initialDelay: 700,
+      },
+      {
+        name: 'Javascript',
+        icon: JavascriptIcon,
+        yearsOfXp: 5,
+        percentageOfXp: 90,
+        animationDelay: 700,
+        initialDelay: 900,
+      },
+      {
+        name: 'Typescript',
+        icon: JavascriptIcon,
+        yearsOfXp: 4,
+        percentageOfXp: 80,
+        animationDelay: 900,
+        initialDelay: 1200,
+      },
+    ],
+    [],
+  )
+
+  const frontendSkills = useMemo<SkillProps[]>(
+    () => [
+      {
+        name: 'ReactJs',
+        icon: ReactIcon,
+        yearsOfXp: 4,
+        percentageOfXp: 90,
+        animationDelay: 300,
+        initialDelay: 500,
+      },
+      {
+        name: 'NextJs',
+        icon: NextjsIcon,
+        yearsOfXp: 3,
+        percentageOfXp: 80,
+        animationDelay: 500,
+        initialDelay: 700,
+      },
+      {
+        name: 'React Native',
+        icon: ReactIcon,
+        yearsOfXp: 3,
+        percentageOfXp: 70,
+        animationDelay: 700,
+        initialDelay: 900,
+      },
+      {
+        name: 'Tailwindcss',
+        icon: TailwindcssIcon,
+        yearsOfXp: 1,
+        percentageOfXp: 60,
+        animationDelay: 900,
+        initialDelay: 1200,
+      },
+    ],
+    [],
+  )
+
+  const backendSkills = useMemo<SkillProps[]>(
+    () => [
+      {
+        name: 'NodeJs',
+        icon: NodejsIcon,
+        yearsOfXp: 3,
+        percentageOfXp: 70,
+        animationDelay: 300,
+        initialDelay: 500,
+      },
+      {
+        name: 'Expo',
+        icon: ExpoIcon,
+        yearsOfXp: 3,
+        percentageOfXp: 70,
+        animationDelay: 500,
+        initialDelay: 700,
+      },
+      {
+        name: 'Jest',
+        icon: JestIcon,
+        yearsOfXp: 3,
+        percentageOfXp: 70,
+        animationDelay: 900,
+        initialDelay: 1200,
+      },
+      {
+        name: 'Nestjs',
+        icon: NestJsIcon,
+        yearsOfXp: 2,
+        percentageOfXp: 60,
+        animationDelay: 700,
+        initialDelay: 900,
+      },
+    ],
+    [],
+  )
+
   return (
     <section className="flex w-full flex-col items-center justify-center">
       <h2 className="text-3xl font-normal uppercase tracking-wider text-slate-200">
@@ -48,68 +174,55 @@ export default function Skills() {
 
       <div className="mt-8 grid w-full grid-cols-3 gap-6">
         <div className="col-span-1 flex flex-col gap-6">
-          <SkillCard
-            title="Html5"
-            value={100}
-            icon={Html5Icon}
-            className="animate-fade-right animate-delay-300 animate-once"
-            delay={500}
-          />
-          <SkillCard
-            title="CSS3"
-            value={100}
-            icon={Css3Icon}
-            className="animate-fade-right animate-delay-500 animate-once"
-            delay={700}
-          />
-          <SkillCard
-            title="Javascript"
-            value={85}
-            icon={JavascriptIcon}
-            className="animate-fade-right animate-delay-[700ms] animate-once"
-            delay={900}
-          />
-          <SkillCard
-            title="Typescript"
-            value={70}
-            icon={TypescriptIcon}
-            className="animate-fade-right animate-delay-[900ms] animate-once"
-            delay={1200}
-          />
+          {basicSkills.map((skill, index) => (
+            <SkillCard
+              key={index}
+              title={skill.name}
+              percentage={skill.percentageOfXp}
+              yearsOfXp={skill.yearsOfXp}
+              icon={skill.icon}
+              className={classNames(
+                'animate-fade-right animate-once',
+                `animate-delay-[${skill.animationDelay}ms]`,
+              )}
+              delay={skill.initialDelay}
+            />
+          ))}
         </div>
 
         <div className="col-span-1 flex flex-col gap-6">
-          <SkillCard
-            title="ReactJs"
-            value={90}
-            icon={ReactIcon}
-            className="animate-fade-right animate-delay-300 animate-once"
-            delay={500}
-          />
-          <SkillCard
-            title="NextJs"
-            value={80}
-            icon={NextjsIcon}
-            className="animate-fade-right animate-delay-500 animate-once"
-            delay={700}
-          />
-          <SkillCard
-            title="React Native"
-            value={65}
-            icon={ReactIcon}
-            className="animate-fade-right animate-delay-[700ms] animate-once"
-            delay={900}
-          />
-          <SkillCard
-            title="Tailwindcss"
-            value={50}
-            icon={TailwindcssIcon}
-            className="animate-fade-right animate-delay-[900ms] animate-once"
-            delay={1200}
-          />
+          {frontendSkills.map((skill, index) => (
+            <SkillCard
+              key={index}
+              title={skill.name}
+              percentage={skill.percentageOfXp}
+              yearsOfXp={skill.yearsOfXp}
+              icon={skill.icon}
+              className={classNames(
+                'animate-fade-right animate-once',
+                `animate-delay-[${skill.animationDelay}ms]`,
+              )}
+              delay={skill.initialDelay}
+            />
+          ))}
         </div>
+
         <div className="col-span-1 flex flex-col gap-6">
-          <SkillCard
+          {backendSkills.map((skill, index) => (
+            <SkillCard
+              key={index}
+              title={skill.name}
+              percentage={skill.percentageOfXp}
+              yearsOfXp={skill.yearsOfXp}
+              icon={skill.icon}
+              className={classNames(
+                'animate-fade-right animate-once',
+                `animate-delay-[${skill.animationDelay}ms]`,
+              )}
+              delay={skill.initialDelay}
+            />
+          ))}
+          {/* <SkillCard
             title="NodeJs"
             value={80}
             icon={NodejsIcon}
@@ -136,19 +249,19 @@ export default function Skills() {
             icon={JestIcon}
             className="animate-fade-right animate-delay-[900ms] animate-once"
             delay={1200}
-          />
+          /> */}
         </div>
       </div>
 
       <div className="mt-12 flex flex-col items-center gap-4">
         <InfiteHorizontalScroller duration={400}>
-          {skills.map((item, index) => (
+          {skillIcons.map((item, index) => (
             <IconCard key={index} icon={item} />
           ))}
         </InfiteHorizontalScroller>
 
         <InfiteHorizontalScroller direction="left" duration={400}>
-          {skills.map((item, index) => (
+          {skillIcons.map((item, index) => (
             <IconCard key={index} icon={item} />
           ))}
         </InfiteHorizontalScroller>

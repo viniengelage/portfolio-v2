@@ -2,8 +2,10 @@ import {
   DribbbleLogo,
   GithubLogo,
   LinkedinLogo,
+  MediumLogo,
 } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import TypewriterComponent from 'typewriter-effect'
 
@@ -29,32 +31,54 @@ export default function About() {
           }}
         />
 
-        <div className="h-1 w-[80px] rounded-lg bg-gradient-to-r from-brand-800 to-brand-950" />
+        <div className="h-1 w-[60px] rounded-lg bg-gradient-to-r from-brand-800 to-brand-950" />
 
-        <p className="font-light text-gray-300">
-          Sou um profissional graduado em Análise e Desenvolvimento de Sistemas
-          e Engenharia de Software, acumulando 4 anos de experiência
-          especializada em JavaScript e seu ecossistema, notadamente em
-          tecnologias como NodeJs, ReactJs, NextJs, Express e Typescript.
+        <p className="text-base font-light text-gray-300">
+          Graduado em Análise e Desenvolvimento de Sistemas e Engenharia de
+          Software, entusiasta de tecnologia, experiência do usuário e design de
+          interfaces, estou há mais de 4 anos ajudando a construir sistemas que
+          geram valor para empresas e melhoram a vida do cliente final.
         </p>
 
-        <div className="flex items-center gap-4 text-brand-500">
-          <button className="animate-flip-down animate-delay-[1000ms] animate-once hover:text-brand-600">
-            <GithubLogo size={32} />
-          </button>
+        <div className="flex items-center gap-4 text-brand-700">
+          <Link
+            href="https://github.com/viniengelage"
+            target="_blank"
+            className="animate-flip-down animate-delay-[1000ms] animate-once hover:text-brand-800"
+          >
+            <GithubLogo size={32} weight="light" />
+          </Link>
 
-          <button className="animate-flip-down animate-delay-[1000ms] animate-once hover:text-brand-600">
-            <DribbbleLogo size={32} />
-          </button>
+          <Link
+            href="https://dribbble.com/viniengelage"
+            target="_blank"
+            className="animate-flip-down animate-delay-[1000ms] animate-once hover:text-brand-600"
+          >
+            <DribbbleLogo size={32} weight="light" />
+          </Link>
 
-          <button className="animate-flip-down animate-delay-[1000ms] animate-once hover:text-brand-600">
-            <LinkedinLogo size={32} />
-          </button>
+          <Link
+            href="https://linkedin.com/in/viniengelage/"
+            target="_blank"
+            className="animate-flip-down animate-delay-[1000ms] animate-once hover:text-brand-600"
+          >
+            <LinkedinLogo size={32} weight="light" />
+          </Link>
+
+          <Link
+            href="https://viniengelage.medium.com/"
+            target="_blank"
+            className="animate-flip-down animate-delay-[1000ms] animate-once hover:text-brand-600"
+          >
+            <MediumLogo size={32} weight="light" />
+          </Link>
         </div>
 
-        <button className="mt-6 w-[160px] rounded-md bg-gradient-to-r from-brand-800 to-brand-950 p-4 hover:from-brand-950 ">
-          Contato
-        </button>
+        <Link href="mailto:viniciosvalensuela@gmail.com" target="_blank">
+          <button className="mt-6 w-[160px] rounded-md bg-gradient-to-r from-brand-800 to-brand-950 p-4 hover:from-brand-950 ">
+            Contato
+          </button>
+        </Link>
       </div>
 
       <div className="relative flex h-[380px] w-[380px] animate-fade-left items-center justify-center overflow-hidden rounded-2xl bg-transparent p-1 shadow-brand-950 drop-shadow-2xl animate-delay-300 animate-once before:absolute before:h-[160%] before:w-[120px] before:animate-rotate before:bg-gradient-to-bl before:from-brand-800 before:to-brand-950 before:content-[''] before:animate-duration-[6s] before:animate-infinite before:animate-ease-linear after:absolute after:inset-2 after:rounded-3xl after:bg-brand-950 after:content-['']">
