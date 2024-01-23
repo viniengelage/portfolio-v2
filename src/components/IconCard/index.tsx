@@ -7,7 +7,7 @@ interface Props {
   color?: string
 }
 
-export default function IconCard({ url, icon: Icon, color }: Props) {
+export default function IconCard({ url, icon: Icon }: Props) {
   return (
     <button className="flex flex-col items-center gap-4 rounded-md bg-opaque p-3">
       {url ? (

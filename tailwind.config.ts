@@ -28,10 +28,19 @@ const config: Config = {
         scroll: {
           to: { transform: 'translate(calc(-50% - 0.5rem))' },
         },
+        rotate: {
+          from: {
+            transform: 'rotate(0deg)',
+          },
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
       },
       animation: {
         scrollFoward: 'scroll forwards',
         scrollReverse: 'scroll reverse',
+        rotate: 'rotate',
       },
     },
   },

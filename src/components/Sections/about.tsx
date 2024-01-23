@@ -13,7 +13,9 @@ export default function About() {
           Vinicios Engelage
         </h2>
 
-        <p className="text-gray-300">
+        <div className="h-1 w-[80px] rounded-lg bg-brand-700" />
+
+        <p className="font-light text-gray-300">
           Sou um profissional graduado em Análise e Desenvolvimento de Sistemas
           e Engenharia de Software, acumulando 4 anos de experiência
           especializada em JavaScript e seu ecossistema, notadamente em
@@ -39,9 +41,16 @@ export default function About() {
         </button>
       </div>
 
-      <figure className="relative h-[400px] w-[400px] animate-fade-left animate-delay-300 animate-duration-700 animate-once">
-        <Image src="/profile.png" alt="profile-image" fill />
-      </figure>
+      <div className="relative flex h-[380px] w-[380px] items-center justify-center overflow-hidden rounded-3xl bg-opaque p-2 shadow-brand-950 drop-shadow-2xl before:absolute before:h-[160%] before:w-[120px] before:animate-rotate before:bg-gradient-to-bl before:from-brand-800 before:to-brand-950 before:content-[''] before:animate-duration-[6s] before:animate-infinite before:animate-ease-linear after:absolute after:inset-2 after:rounded-3xl after:bg-brand-950 after:content-['']">
+        <figure className="relative h-full w-full p-4">
+          <Image
+            src="/profile.png"
+            alt="profile-image"
+            fill
+            className="z-10 rounded-2xl"
+          />
+        </figure>
+      </div>
     </section>
   )
 }

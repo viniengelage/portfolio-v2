@@ -1,7 +1,20 @@
+'use client'
+
 import Image from 'next/image'
-import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import { useCallback } from 'react'
 
 export default function Header() {
+  const pathname = usePathname()
+  const { push } = useRouter()
+
+  const handlePush = useCallback(
+    (section: string) => {
+      push(`${pathname}?section=${section}`)
+    },
+    [pathname, push],
+  )
+
   return (
     <header className="flex w-full items-center justify-between py-4">
       <figure className="relative h-[70px] w-[70px]">
@@ -9,17 +22,37 @@ export default function Header() {
       </figure>
 
       <nav className="flex list-none items-center gap-6 font-thin">
-        <li className="hover:underline">
-          <Link href="#">Sobre</Link>
+        <li>
+          <button
+            className="hover:underline"
+            onClick={() => handlePush('about')}
+          >
+            Sobre
+          </button>
         </li>
-        <li className="hover:underline">
-          <Link href="#">Projetos</Link>
+        <li>
+          <button
+            className="hover:underline"
+            onClick={() => handlePush('projects')}
+          >
+            Projetos
+          </button>
         </li>
-        <li className="hover:underline">
-          <Link href="#">Skills</Link>
+        <li>
+          <button
+            className="hover:underline"
+            onClick={() => handlePush('skills')}
+          >
+            Skills
+          </button>
         </li>
-        <li className="hover:underline">
-          <Link href="#">Contato</Link>
+        <li>
+          <button
+            className="hover:underline"
+            onClick={() => handlePush('contact')}
+          >
+            Contato
+          </button>
         </li>
       </nav>
     </header>

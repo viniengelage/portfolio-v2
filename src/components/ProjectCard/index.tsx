@@ -18,13 +18,13 @@ export default function ProjectCard({ className }: Props) {
         <Image src="/path-logo.svg" alt="path-logo" fill />
       </figure>
 
-      <p className="font-light text-gray-300">
+      <p className="text-sm font-light text-gray-300">
         Lorem ipsum dolor sit amet consectetur. Diam et justo ridiculus mauris
         massa turpis ultrices viverra. Dignissim sed enim consectetur massa
         nullam.
       </p>
 
-      <button className="flex w-full items-center justify-between text-brand-500 hover:text-brand-800">
+      <button className="mt-4 flex w-full items-center justify-between text-brand-500 hover:text-brand-800">
         Saiba mais
         <ArrowRight />
       </button>

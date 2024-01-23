@@ -7,7 +7,10 @@ export default function Projects() {
         Projetos
       </h2>
 
-      <div className="mt-16 grid grid-cols-3 gap-4">
+      <div className="mt-8 grid grid-cols-3 grid-rows-2 gap-4">
+        <ProjectCard className="animate-fade-down animate-delay-[400ms] animate-duration-500 animate-once" />
+        <ProjectCard className="animate-fade-down animate-delay-[600ms] animate-duration-500 animate-once" />
+        <ProjectCard className="animate-fade-down animate-delay-[800ms] animate-duration-500 animate-once" />
         <ProjectCard className="animate-fade-down animate-delay-[400ms] animate-duration-500 animate-once" />
         <ProjectCard className="animate-fade-down animate-delay-[600ms] animate-duration-500 animate-once" />
         <ProjectCard className="animate-fade-down animate-delay-[800ms] animate-duration-500 animate-once" />
