@@ -3,12 +3,12 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react/dist/ssr'
+import { useSearchParams } from 'next/navigation'
 
 import About from '@/components/Sections/about'
 import Projects from '@/components/Sections/projects'
 import Contact from '@/components/Sections/contact'
 import Skills from '@/components/Sections/skills'
-import { useSearchParams } from 'next/navigation'
 
 export default function Home() {
   const swiperRef = useRef<SwiperRef>(null)
@@ -74,6 +74,10 @@ export default function Home() {
       >
         <CaretRight size={32} />
       </button>
+
+      <p className="fixed bottom-6 text-xs text-gray-500">
+        Crafted with ❤️ Vinicios Engelage
+      </p>
 
       <button
         className="fixed bottom-20 left-20 text-gray-300 hover:text-gray-500"
