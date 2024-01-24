@@ -18,6 +18,7 @@ interface FormData extends HTMLFormElement {
 
 export default function Contact() {
   const [loading, setLoading] = useState(false)
+  const [submited, setSubmited] = useState(false)
 
   const handleSubmit = useCallback((event: FormEvent<FormData>) => {
     event.preventDefault()
@@ -39,7 +40,10 @@ export default function Contact() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    }).then(() => setLoading(false))
+    }).then(() => {
+      setLoading(false)
+      setSubmited(true)
+    })
   }, [])
 
   return (
@@ -90,11 +94,16 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="w-full animate-fade-left rounded-md bg-gradient-to-r from-brand-800 to-brand-950 p-4 animate-delay-[500ms] animate-once hover:to-brand-800"
-            disabled={loading}
+            className="w-full animate-fade-left rounded-md bg-gradient-to-r from-brand-800 to-brand-950 p-4 animate-delay-[500ms] animate-once hover:to-brand-800 disabled:bg-opaque"
+            disabled={loading || submited}
+            aria-disabled={loading || submited}
           >
             {!loading ? (
-              'Enviar'
+              submited ? (
+                'Mensagem enviada'
+              ) : (
+                'Enviar'
+              )
             ) : (
               <div className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" />
             )}
@@ -108,7 +117,7 @@ export default function Contact() {
             </h3>
 
             <p className="animate-fade-down text-right text-sm font-normal text-gray-200 animate-delay-[400ms] animate-once">
-              Confira os links abaixo:
+              Confira os links abaixo
             </p>
           </div>
 
