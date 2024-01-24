@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react/dist/ssr'
-import { useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 import About from '@/components/Sections/about'
 import Projects from '@/components/Sections/projects'
@@ -13,6 +13,8 @@ import Skills from '@/components/Sections/skills'
 export default function Home() {
   const swiperRef = useRef<SwiperRef>(null)
 
+  const router = useRouter()
+  const pathname = usePathname()
   const params = useSearchParams()
 
   const section = params.get('section')
@@ -27,17 +29,49 @@ export default function Home() {
     [],
   )
 
+  const handleUpdateSlie = useCallback(() => {
+    const sectionIndex = Object.entries(sections).find(
+      (item) => item[0] === section,
+    )
+
+    swiperRef.current?.swiper.enable()
+    swiperRef.current?.swiper.slideTo(sectionIndex ? sectionIndex[1] : 0)
+    swiperRef.current?.swiper.disable()
+  }, [section, sections])
+
+  const handleNextSlide = useCallback(() => {
+    const currentSlide = swiperRef.current?.swiper.activeIndex || 0
+
+    const isLastSlide = swiperRef.current?.swiper.isEnd
+
+    const slide = Object.entries(sections).find(
+      (item) => item[1] === currentSlide + 1,
+    )
+
+    const slideSection = isLastSlide ? 'about' : slide ? slide[0] : 'about'
+
+    router.push(`${pathname}?section=${slideSection}`)
+  }, [sections, pathname, router])
+
+  const handlePrevSlide = useCallback(() => {
+    const currentSlide = swiperRef.current?.swiper.activeIndex || 0
+
+    const isFirstSlide = swiperRef.current?.swiper.isBeginning
+
+    const slide = Object.entries(sections).find(
+      (item) => item[1] === currentSlide - 1,
+    )
+
+    const slideSection = isFirstSlide ? 'contact' : slide ? slide[0] : 'contact'
+
+    router.push(`${pathname}?section=${slideSection}`)
+  }, [sections, pathname, router])
+
   useEffect(() => {
     if (section) {
-      const sectionIndex = Object.entries(sections).find(
-        (item) => item[0] === section,
-      )
-
-      swiperRef.current?.swiper.enable()
-      swiperRef.current?.swiper.slideTo(sectionIndex ? sectionIndex[1] : 0)
-      swiperRef.current?.swiper.disable()
+      handleUpdateSlie()
     }
-  }, [section, sections])
+  }, [section, sections, handleUpdateSlie])
 
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center pb-20">
@@ -65,29 +99,21 @@ export default function Home() {
       </Swiper>
 
       <button
-        className="fixed bottom-20 right-20 text-gray-300 hover:text-gray-500"
-        onClick={() => {
-          swiperRef.current?.swiper.enable()
-          swiperRef.current?.swiper.slideNext()
-          swiperRef.current?.swiper.disable()
-        }}
+        className="fixed bottom-20 left-20 text-gray-300 hover:text-gray-500"
+        onClick={handlePrevSlide}
       >
-        <CaretRight size={32} />
+        <CaretLeft size={32} />
       </button>
 
       <p className="fixed bottom-6 text-xs text-gray-500">
-        Crafted with ❤️ Vinicios Engelage
+        Crafted with ❤️ by Vinicios Engelage
       </p>
 
       <button
-        className="fixed bottom-20 left-20 text-gray-300 hover:text-gray-500"
-        onClick={() => {
-          swiperRef.current?.swiper.enable()
-          swiperRef.current?.swiper.slidePrev()
-          swiperRef.current?.swiper.disable()
-        }}
+        className="fixed bottom-20 right-20 text-gray-300 hover:text-gray-500"
+        onClick={handleNextSlide}
       >
-        <CaretLeft size={32} />
+        <CaretRight size={32} />
       </button>
     </div>
   )

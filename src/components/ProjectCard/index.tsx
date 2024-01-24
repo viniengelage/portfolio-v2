@@ -42,3 +42,40 @@ export default function ProjectCard({
     </div>
   )
 }
+
+interface SmallProjectCardProps extends Props {
+  title: string
+}
+
+export function SmallProjectCard({
+  title,
+  description,
+  logo,
+  url,
+  className,
+}: SmallProjectCardProps) {
+  return (
+    <div
+      className={classNames(
+        'flex animate-fade-down items-center gap-4 rounded-md bg-opaque p-4',
+        className,
+      )}
+    >
+      <Image width={100} height={100} src={logo} alt="project-logo" />
+
+      <div className="flex h-full flex-1 flex-col">
+        <p>{title}</p>
+        <span className="mt-2 flex-1 text-xs text-gray-300">{description}</span>
+
+        <Link
+          href={url}
+          target="_blank"
+          className="mt-4 flex items-center justify-between text-xs text-brand-500"
+        >
+          Saiba mais
+          <ArrowRight size={16} weight="light" />
+        </Link>
+      </div>
+    </div>
+  )
+}

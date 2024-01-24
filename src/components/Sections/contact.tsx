@@ -58,12 +58,12 @@ export default function Contact() {
               Vamos trabalhar em algo juntos?
             </h3>
 
-            <p className="text-gray-201 mt-2 text-sm">
+            <p className="text-gray-201 mt-2 animate-fade-down text-sm animate-delay-[400ms] animate-once">
               Preencha o formulário abaixo para me deixar uma mensagem
             </p>
           </div>
 
-          <div className="h-1 w-[60px] animate-fade-down rounded bg-gradient-to-r from-brand-800 to-brand-950 animate-delay-300 animate-once" />
+          <div className="h-1 w-[60px] animate-fade-left rounded bg-gradient-to-r from-brand-800 to-brand-950 animate-delay-300 animate-once" />
 
           <input
             name="email"
@@ -103,43 +103,43 @@ export default function Contact() {
 
         <div className="col-span-1 row-span-1 flex flex-col items-end gap-4">
           <div className="flex flex-col gap-2">
-            <h3 className="text-right text-lg font-medium text-gray-200">
+            <h3 className="animate-fade-down text-right text-lg font-medium text-gray-200 animate-delay-300 animate-once">
               Me encontre também nas redes socias!
             </h3>
 
-            <p className="text-right text-sm font-normal text-gray-200">
+            <p className="animate-fade-down text-right text-sm font-normal text-gray-200 animate-delay-[400ms] animate-once">
               Confira os links abaixo:
             </p>
           </div>
 
-          <div className="h-1 w-[60px] animate-fade-down rounded bg-gradient-to-r from-brand-800 to-brand-950 animate-delay-300 animate-once" />
+          <div className="h-1 w-[60px] animate-fade-right rounded bg-gradient-to-r from-brand-800 to-brand-950 animate-delay-300 animate-once" />
 
           <SocialCard
             title="linkedin.com/in/viniengelage"
             icon={LinkedinLogo}
             url="https://www.linkedin.com/in/viniengelage"
-            className="animate-flip-down animate-delay-300 animate-once"
+            className="animate-fade-down animate-delay-300 animate-once"
           />
 
           <SocialCard
             title="github.com/viniengelage"
             icon={GithubLogo}
             url="https://www.github.com/viniengelage"
-            className="animate-flip-down animate-delay-[400ms] animate-once"
+            className="animate-fade-down animate-delay-[400ms] animate-once"
           />
 
           <SocialCard
             title="dribbble.com/viniengelage"
             icon={DribbbleLogo}
             url="https://dribbble.com/viniengelage"
-            className="animate-flip-down animate-delay-500 animate-once"
+            className="animate-fade-down animate-delay-500 animate-once"
           />
 
           <SocialCard
             title="viniciosvalensuela@gmail.com"
             icon={At}
             url="mailto:viniciosvalensuela@gmail.com"
-            className="animate-flip-down animate-delay-[600ms] animate-once"
+            className="animate-fade-down animate-delay-[600ms] animate-once"
           />
         </div>
       </div>
