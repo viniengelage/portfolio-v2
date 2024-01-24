@@ -17,11 +17,11 @@ export default function Header() {
 
   return (
     <header className="flex w-full items-center justify-between py-4">
-      <figure className="relative h-[70px] w-[70px]">
+      <figure className="relative h-[48px] w-[48px] sm:h-[70px] sm:w-[70px]">
         <Image src="/logo.svg" alt="logo" fill />
       </figure>
 
-      <nav className="flex list-none items-center gap-6 font-thin">
+      <nav className="flex list-none items-center gap-6 text-sm font-thin sm:text-base">
         <li>
           <button
             className="hover:underline"

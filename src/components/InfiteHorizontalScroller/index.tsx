@@ -43,7 +43,7 @@ export default function InfiteHorizontalScroller({
   }, [])
 
   return (
-    <div id="scroller" className="w-[700px] mask-gradient">
+    <div id="scroller" className="w-[80%] mask-gradient sm:w-[700px]">
       <div
         id="scroller_inner"
         className={classNames(

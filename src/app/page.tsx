@@ -75,46 +75,58 @@ export default function Home() {
 
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center pb-20">
-      <Swiper
-        ref={swiperRef}
-        className="flex w-full"
-        loop
-        onAfterInit={(swiper) => swiper.disable()}
-      >
-        <SwiperSlide>
-          {({ isActive }) => (isActive ? <About /> : null)}
-        </SwiperSlide>
+      <div className="relative hidden h-full w-full flex-col items-center justify-center md:flex">
+        <Swiper
+          ref={swiperRef}
+          className="flex w-full"
+          loop
+          onAfterInit={(swiper) => swiper.disable()}
+        >
+          <SwiperSlide>
+            {({ isActive }) => (isActive ? <About /> : null)}
+          </SwiperSlide>
 
-        <SwiperSlide>
-          {({ isActive }) => (isActive ? <Projects /> : null)}
-        </SwiperSlide>
+          <SwiperSlide>
+            {({ isActive }) => (isActive ? <Projects /> : null)}
+          </SwiperSlide>
 
-        <SwiperSlide>
-          {({ isActive }) => (isActive ? <Skills /> : null)}
-        </SwiperSlide>
+          <SwiperSlide>
+            {({ isActive }) => (isActive ? <Skills /> : null)}
+          </SwiperSlide>
 
-        <SwiperSlide>
-          {({ isActive }) => (isActive ? <Contact /> : null)}
-        </SwiperSlide>
-      </Swiper>
+          <SwiperSlide>
+            {({ isActive }) => (isActive ? <Contact /> : null)}
+          </SwiperSlide>
+        </Swiper>
 
-      <button
-        className="fixed bottom-20 left-20 text-gray-300 hover:text-gray-500"
-        onClick={handlePrevSlide}
-      >
-        <CaretLeft size={32} />
-      </button>
+        <button
+          className="fixed bottom-20 left-20 text-gray-300 hover:text-gray-500"
+          onClick={handlePrevSlide}
+        >
+          <CaretLeft size={32} />
+        </button>
 
-      <p className="fixed bottom-6 text-xs text-gray-500">
-        Crafted with ❤️ by Vinicios Engelage
-      </p>
+        <p className="fixed bottom-6 text-xs text-gray-500">
+          Crafted with ❤️ by Vinicios Engelage
+        </p>
 
-      <button
-        className="fixed bottom-20 right-20 text-gray-300 hover:text-gray-500"
-        onClick={handleNextSlide}
-      >
-        <CaretRight size={32} />
-      </button>
+        <button
+          className="fixed bottom-20 right-20 text-gray-300 hover:text-gray-500"
+          onClick={handleNextSlide}
+        >
+          <CaretRight size={32} />
+        </button>
+      </div>
+
+      <div className="flex w-full flex-col gap-10 py-10 sm:hidden">
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+        <p className="text-center text-xs text-gray-500">
+          Crafted with ❤️ by Vinicios Engelage
+        </p>
+      </div>
     </div>
   )
 }

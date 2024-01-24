@@ -172,7 +172,7 @@ export default function Skills() {
         Skills
       </h2>
 
-      <div className="mt-8 grid w-full grid-cols-3 gap-6">
+      <div className="mt-8 grid w-full grid-cols-1 gap-6 sm:grid-cols-3">
         <div className="col-span-1 flex flex-col gap-6">
           {basicSkills.map((skill, index) => (
             <SkillCard

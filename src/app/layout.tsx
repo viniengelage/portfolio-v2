@@ -24,10 +24,10 @@ export default function RootLayout({
       <body
         className={classNames(
           sora.className,
-          'h-screen w-screen items-center text-white',
+          'h-auto w-screen items-center text-white sm:h-screen',
         )}
       >
-        <main className="mx-auto flex h-full w-full max-w-screen-lg flex-col items-center">
+        <main className="mx-auto flex h-full w-full max-w-[90%] flex-col items-center sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg">
           <Header />
           <div className="h-full w-full flex-1">{children}</div>
         </main>

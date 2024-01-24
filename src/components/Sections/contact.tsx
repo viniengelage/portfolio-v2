@@ -52,7 +52,7 @@ export default function Contact() {
         Contato
       </h2>
 
-      <div className="mt-6 flex w-full items-start justify-center gap-28">
+      <div className="mt-6 grid w-full grid-cols-1 gap-28 sm:grid-cols-2">
         <form
           className="flex w-full max-w-[420px] flex-col items-start gap-4"
           onSubmit={handleSubmit}

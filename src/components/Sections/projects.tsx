@@ -72,7 +72,7 @@ export default function Projects() {
         Projetos
       </h2>
 
-      <div className="mt-8 grid grid-cols-3 gap-4">
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
@@ -87,7 +87,7 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="mt-8 grid w-[60%] grid-cols-1 gap-4">
+      <div className="mt-8 hidden w-full grid-cols-1 gap-4 sm:grid sm:w-[60%]">
         {smallProjects.map((project, index) => (
           <SmallProjectCard
             key={index}
