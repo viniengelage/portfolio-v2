@@ -222,34 +222,6 @@ export default function Skills() {
               delay={skill.initialDelay}
             />
           ))}
-          {/* <SkillCard
-            title="NodeJs"
-            value={80}
-            icon={NodejsIcon}
-            className="animate-fade-right animate-delay-300 animate-once"
-            delay={500}
-          />
-          <SkillCard
-            title="Expo"
-            value={70}
-            icon={ExpoIcon}
-            className="animate-fade-right animate-delay-500 animate-once"
-            delay={700}
-          />
-          <SkillCard
-            title="NestJs"
-            value={60}
-            icon={NestJsIcon}
-            className="animate-fade-right animate-delay-[700ms] animate-once"
-            delay={900}
-          />
-          <SkillCard
-            title="Jest"
-            value={60}
-            icon={JestIcon}
-            className="animate-fade-right animate-delay-[900ms] animate-once"
-            delay={1200}
-          /> */}
         </div>
       </div>
 
