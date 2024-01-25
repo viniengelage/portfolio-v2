@@ -19,7 +19,7 @@ export default function About() {
 
         <TypewriterComponent
           options={{
-            strings: ['Fullstack Developer', 'UX/UI Designer'],
+            strings: ['Frontend Developer', 'UX/UI Designer'],
             delay: 100,
             autoStart: true,
             loop: true,
