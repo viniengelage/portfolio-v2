@@ -19,12 +19,13 @@ export const metadata: Metadata = {
     url: 'https://viniengelage.com',
     images: [
       {
-        url: 'https://viniengelage.com/og-small-png',
+        url: 'https://viniengelage.com/og-small.png',
         width: 256,
         height: 256,
+        type: 'image',
       },
       {
-        url: 'https://viniengelage.com/og-png',
+        url: 'https://viniengelage.com/og.png',
         width: 800,
         height: 600,
       },
