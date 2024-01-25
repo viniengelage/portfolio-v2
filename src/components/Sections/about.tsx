@@ -47,13 +47,14 @@ export default function About() {
             <GithubLogo size={32} weight="light" />
           </Link>
 
+          {/* 
           <Link
             href="https://dribbble.com/viniengelage"
             target="_blank"
             className="animate-flip-down animate-delay-[1000ms] animate-once hover:text-brand-600"
           >
             <DribbbleLogo size={32} weight="light" />
-          </Link>
+          </Link> */}
 
           <Link
             href="https://linkedin.com/in/viniengelage/"
