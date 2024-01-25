@@ -13,7 +13,7 @@ export default function InfiteHorizontalScroller({
   duration = 100,
 }: Props) {
   useEffect(() => {
-    const scrollers = document.querySelectorAll('#scroller')
+    const scrollers = document.querySelectorAll<HTMLDivElement>('#scroller')
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       addAnimation()
@@ -21,19 +21,20 @@ export default function InfiteHorizontalScroller({
 
     function addAnimation() {
       scrollers.forEach((scroller) => {
-        // add data-animated="true" to every `.scroller` on the page
         scroller.setAttribute('data-animated', 'true')
 
-        // Make an array from the elements within `.scroller-inner`
-        const scrollerInner = scroller.querySelector('#scroller_inner')
+        const scrollerInner =
+          scroller.querySelector<HTMLDivElement>('#scroller_inner')
 
         if (scrollerInner) {
-          const scrollerContent = Array.from(scrollerInner.children)
+          const scrollerContent = Array.from(
+            scrollerInner.children,
+          ) as HTMLDivElement[]
 
           scrollerContent.forEach((item) => {
-            const duplicatedItem = item.cloneNode(true)
+            const duplicatedItem = item.cloneNode(true) as HTMLDivElement
 
-            // duplicatedItem.setAttribute('aria-hidden', true)
+            duplicatedItem.setAttribute('aria-hidden', 'true')
 
             scrollerInner.appendChild(duplicatedItem)
           })

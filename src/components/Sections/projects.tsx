@@ -79,15 +79,15 @@ export default function Projects() {
             description={project.description}
             logo={project.logo}
             url={project.url}
-            className={classNames(
-              'animate-fade-down animate-duration-500 animate-once',
-              `animate-delay-[${project.animationDelay}ms]`,
-            )}
+            className="animate-fade-down animate-duration-500 animate-once"
+            style={{
+              animationDelay: `${project.animationDelay}ms`,
+            }}
           />
         ))}
       </div>
 
-      <div className="mt-8 hidden w-full grid-cols-1 gap-4 sm:grid sm:w-[60%]">
+      {/* <div className="mt-8 hidden w-full grid-cols-1 gap-4 sm:grid sm:w-[60%]">
         {smallProjects.map((project, index) => (
           <SmallProjectCard
             key={index}
@@ -95,13 +95,13 @@ export default function Projects() {
             description={project.description}
             logo={project.logo}
             url={project.url}
-            className={classNames(
-              'animate-fade-down animate-duration-500 animate-once',
-              `animate-delay-[${project.animationDelay}ms]`,
-            )}
+            className="animate-fade-down animate-duration-500 animate-once"
+            style={{
+              animationDelay: `${project.animationDelay}ms`,
+            }}
           />
         ))}
-      </div>
+      </div> */}
     </section>
   )
 }

@@ -73,6 +73,14 @@ export default function Home() {
     }
   }, [section, sections, handleUpdateSlie])
 
+  // const handleNextSlide = useCallback(() => {
+  //   swiperRef.current?.swiper.slideNext()
+  // }, [])
+
+  // const handlePrevSlide = useCallback(() => {
+  //   swiperRef.current?.swiper.slidePrev()
+  // }, [])
+
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center pb-20">
       <div className="relative hidden h-full w-full flex-col items-center justify-center md:flex">
@@ -80,7 +88,7 @@ export default function Home() {
           ref={swiperRef}
           className="flex w-full"
           loop
-          onAfterInit={(swiper) => swiper.disable()}
+          // onAfterInit={(swiper) => swiper.disable()}
         >
           <SwiperSlide>
             {({ isActive }) => (isActive ? <About /> : null)}

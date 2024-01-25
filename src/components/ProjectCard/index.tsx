@@ -2,8 +2,9 @@ import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import { HtmlHTMLAttributes } from 'react'
 
-interface Props {
+interface Props extends HtmlHTMLAttributes<HTMLDivElement> {
   description: string
   logo: string
   url: string
@@ -15,6 +16,7 @@ export default function ProjectCard({
   logo,
   url,
   className,
+  ...props
 }: Props) {
   return (
     <div
@@ -22,6 +24,7 @@ export default function ProjectCard({
         'flex animate-fade-down flex-col items-center gap-4 rounded-md bg-opaque p-4',
         className,
       )}
+      {...props}
     >
       <figure className="relative h-[40px] w-[120px]">
         <Image src={logo} alt="path-logo" fill />

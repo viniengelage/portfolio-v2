@@ -20,14 +20,12 @@ import ExpressJsIcon from '@/assets/icons/expressjs'
 import FigmaIcon from '@/assets/icons/figma'
 import GitIcon from '@/assets/icons/git'
 import AdonisJsIcon from '@/assets/icons/adonisjs'
-import classNames from 'classnames'
 
 interface SkillProps {
   name: string
   icon: ComponentType<SVGProps<SVGSVGElement>>
   yearsOfXp: number
   percentageOfXp: number
-  initialDelay: number
   animationDelay: number
 }
 
@@ -60,31 +58,27 @@ export default function Skills() {
         yearsOfXp: 5,
         percentageOfXp: 90,
         animationDelay: 300,
-        initialDelay: 500,
       },
       {
         name: 'Css3',
         icon: Css3Icon,
         yearsOfXp: 5,
         percentageOfXp: 90,
-        animationDelay: 500,
-        initialDelay: 700,
+        animationDelay: 400,
       },
       {
         name: 'Javascript',
         icon: JavascriptIcon,
         yearsOfXp: 5,
         percentageOfXp: 90,
-        animationDelay: 700,
-        initialDelay: 900,
+        animationDelay: 500,
       },
       {
         name: 'Typescript',
-        icon: JavascriptIcon,
+        icon: TypescriptIcon,
         yearsOfXp: 4,
         percentageOfXp: 80,
-        animationDelay: 900,
-        initialDelay: 1200,
+        animationDelay: 600,
       },
     ],
     [],
@@ -98,31 +92,27 @@ export default function Skills() {
         yearsOfXp: 4,
         percentageOfXp: 90,
         animationDelay: 300,
-        initialDelay: 500,
       },
       {
         name: 'NextJs',
         icon: NextjsIcon,
         yearsOfXp: 3,
         percentageOfXp: 80,
-        animationDelay: 500,
-        initialDelay: 700,
+        animationDelay: 400,
       },
       {
         name: 'React Native',
         icon: ReactIcon,
         yearsOfXp: 3,
         percentageOfXp: 70,
-        animationDelay: 700,
-        initialDelay: 900,
+        animationDelay: 500,
       },
       {
         name: 'Tailwindcss',
         icon: TailwindcssIcon,
         yearsOfXp: 1,
         percentageOfXp: 60,
-        animationDelay: 900,
-        initialDelay: 1200,
+        animationDelay: 600,
       },
     ],
     [],
@@ -136,31 +126,27 @@ export default function Skills() {
         yearsOfXp: 3,
         percentageOfXp: 70,
         animationDelay: 300,
-        initialDelay: 500,
       },
       {
         name: 'Expo',
         icon: ExpoIcon,
         yearsOfXp: 3,
         percentageOfXp: 70,
-        animationDelay: 500,
-        initialDelay: 700,
+        animationDelay: 400,
       },
       {
         name: 'Jest',
         icon: JestIcon,
         yearsOfXp: 3,
         percentageOfXp: 70,
-        animationDelay: 900,
-        initialDelay: 1200,
+        animationDelay: 500,
       },
       {
         name: 'Nestjs',
         icon: NestJsIcon,
         yearsOfXp: 2,
         percentageOfXp: 60,
-        animationDelay: 700,
-        initialDelay: 900,
+        animationDelay: 600,
       },
     ],
     [],
@@ -181,11 +167,10 @@ export default function Skills() {
               percentage={skill.percentageOfXp}
               yearsOfXp={skill.yearsOfXp}
               icon={skill.icon}
-              className={classNames(
-                'animate-fade-right animate-once',
-                `animate-delay-[${skill.animationDelay}ms]`,
-              )}
-              delay={skill.initialDelay}
+              className="animate-fade-right animate-once"
+              style={{
+                animationDelay: `${skill.animationDelay}ms`,
+              }}
             />
           ))}
         </div>
@@ -198,11 +183,10 @@ export default function Skills() {
               percentage={skill.percentageOfXp}
               yearsOfXp={skill.yearsOfXp}
               icon={skill.icon}
-              className={classNames(
-                'animate-fade-right animate-once',
-                `animate-delay-[${skill.animationDelay}ms]`,
-              )}
-              delay={skill.initialDelay}
+              className="animate-fade-right animate-once"
+              style={{
+                animationDelay: `${skill.animationDelay}ms`,
+              }}
             />
           ))}
         </div>
@@ -215,11 +199,10 @@ export default function Skills() {
               percentage={skill.percentageOfXp}
               yearsOfXp={skill.yearsOfXp}
               icon={skill.icon}
-              className={classNames(
-                'animate-fade-right animate-once',
-                `animate-delay-[${skill.animationDelay}ms]`,
-              )}
-              delay={skill.initialDelay}
+              className="animate-fade-right animate-once"
+              style={{
+                animationDelay: `${skill.animationDelay}ms`,
+              }}
             />
           ))}
         </div>

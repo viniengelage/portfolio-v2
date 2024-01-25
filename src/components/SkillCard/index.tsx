@@ -21,15 +21,14 @@ export default function SkillCard({
   icon: Icon,
   percentage,
   yearsOfXp,
-  delay,
   className,
   ...props
 }: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setIsOpen(true), delay || 500)
-  }, [delay])
+    setIsOpen(true)
+  }, [])
 
   return (
     <div
