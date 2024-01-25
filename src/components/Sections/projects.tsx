@@ -1,8 +1,9 @@
 import { useMemo } from 'react'
-import ProjectCard, { SmallProjectCard } from '../ProjectCard'
-import classNames from 'classnames'
-import Image from 'next/image'
-import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
+import ProjectCard from '../ProjectCard'
+
+// import classNames from 'classnames'
+// import Image from 'next/image'
+// import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 
 interface ProjectProps {
   title: string
@@ -44,27 +45,27 @@ export default function Projects() {
     [],
   )
 
-  const smallProjects = useMemo<ProjectProps[]>(
-    () => [
-      {
-        title: 'MyMoneyIn',
-        url: 'https://github.com/viniengelage/mymoneyin',
-        logo: '/project-icons/logo-mymoneyin.svg',
-        description:
-          'Este projeto é uma aplicação em React Native para conversão de moedas, criado para aprofundar estudos em aplicações nativas hibridas com React Native e Expo.',
-        animationDelay: 900,
-      },
-      // {
-      //   title: 'MyMoneyIn',
-      //   url: 'https://github.com/viniengelage/mymoneyin',
-      //   logo: '/project-icons/logo-mymoneyin.svg',
-      //   description:
-      //     'MyMoneyIn é uma aplicação mobile para conversão de moedas criada em ReactNative, desenvolvido para fins de estudos e coisas aprendidas durante o tempo, então é um projeto quem sempre estará sendo atualizado.',
-      //   animationDelay: 1000,
-      // },
-    ],
-    [],
-  )
+  // const smallProjects = useMemo<ProjectProps[]>(
+  //   () => [
+  //     {
+  //       title: 'MyMoneyIn',
+  //       url: 'https://github.com/viniengelage/mymoneyin',
+  //       logo: '/project-icons/logo-mymoneyin.svg',
+  //       description:
+  //         'Este projeto é uma aplicação em React Native para conversão de moedas, criado para aprofundar estudos em aplicações nativas hibridas com React Native e Expo.',
+  //       animationDelay: 900,
+  //     },
+  // {
+  //   title: 'MyMoneyIn',
+  //   url: 'https://github.com/viniengelage/mymoneyin',
+  //   logo: '/project-icons/logo-mymoneyin.svg',
+  //   description:
+  //     'MyMoneyIn é uma aplicação mobile para conversão de moedas criada em ReactNative, desenvolvido para fins de estudos e coisas aprendidas durante o tempo, então é um projeto quem sempre estará sendo atualizado.',
+  //   animationDelay: 1000,
+  // },
+  //   ],
+  //   [],
+  // )
 
   return (
     <section className="flex w-full flex-col items-center justify-center">
