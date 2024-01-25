@@ -137,12 +137,12 @@ export default function Contact() {
             className="animate-fade-down animate-delay-[400ms] animate-once"
           />
 
-          <SocialCard
+          {/* <SocialCard
             title="dribbble.com/viniengelage"
             icon={DribbbleLogo}
             url="https://dribbble.com/viniengelage"
             className="animate-fade-down animate-delay-500 animate-once"
-          />
+          /> */}
 
           <SocialCard
             title="viniciosvalensuela@gmail.com"
